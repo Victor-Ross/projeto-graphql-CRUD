@@ -1,17 +1,17 @@
-import { Arg, Args, Int, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Args, Authorized, Int, Mutation, Query, Resolver } from 'type-graphql';
 import { Product } from '../database/entities/Product';
 
-import { AlterarProdutoTypes } from '../schemas/ResolverTypes/AlterarProdutoTypes';
+import { AlterProductTypes } from '../schemas/ResolverTypes/AlterProductTypes';
 
-import { ListProductsService } from '../services/listProductsService';
-import { CreateProductsService } from '../services/createProductsService';
-import { FindProductById } from '../services/findProductByIdService';
-import { UpdateProductService } from '../services/updateProductService';
-import { DeleteProductService } from '../services/deleteProductService';
-import { CountProductsService } from '../services/countProductsService';
-import { FindProductByLowestStockService } from '../services/findProductByLowestStockService';
-import { FindProductByHighestStockService } from '../services/findProductByHighestStockService';
-import { FindProductByStockLowerThanFiveService } from '../services/findProductByStockLowerThanFiveService';
+import { ListProductsService } from '../services/products/listProductsService';
+import { CreateProductsService } from '../services/products/createProductsService';
+import { FindProductById } from '../services/products/findProductByIdService';
+import { UpdateProductService } from '../services/products/updateProductService';
+import { DeleteProductService } from '../services/products/deleteProductService';
+import { CountProductsService } from '../services/products/countProductsService';
+import { FindProductByLowestStockService } from '../services/products/findProductByLowestStockService';
+import { FindProductByHighestStockService } from '../services/products/findProductByHighestStockService';
+import { FindProductByStockLowerThanFiveService } from '../services/products/findProductByStockLowerThanFiveService';
 
 
 
@@ -80,6 +80,7 @@ class ProductsController {
   }
 
   @Mutation(returns => Product, { name: 'AdicionarProduto' })
+  @Authorized()
   async create(
     @Arg("nome") nome: string,
     @Arg("fabricante") fabricante: string,
@@ -100,8 +101,9 @@ class ProductsController {
   }
 
   @Mutation(returns => Product, { name: 'AlterarProduto' })
+  @Authorized()
   async update(
-    @Args() { id, nome, fabricante, quantidadeEstoque, valor }: AlterarProdutoTypes
+    @Args() { id, nome, fabricante, quantidadeEstoque, valor }: AlterProductTypes
     
     ) {
 
@@ -119,6 +121,7 @@ class ProductsController {
   }
 
   @Mutation(returns => Boolean, { name: "DeletarProduto" })
+  @Authorized()
   async delete(
     @Arg("id") id: string
   ) {

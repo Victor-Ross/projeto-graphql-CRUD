@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import { Product } from '../database/entities/Product';
-import { ProductsRepository } from '../repositories/ProductsRepository';
+import { Product } from '../../database/entities/Product';
+import { ProductsRepository } from '../../repositories/ProductsRepository';
 
 class FindProductByHighestStockService {
   async execute() {

@@ -2,7 +2,7 @@ import { ArgsType, Field, Int } from 'type-graphql';
 
 
 @ArgsType()
- export class AlterarProdutoTypes {
+ export class AlterProductTypes {
   @Field({ nullable: false })
   id: string
 

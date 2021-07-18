@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm';
-import { ProductsRepository } from '../repositories/ProductsRepository';
+import { ProductsRepository } from '../../repositories/ProductsRepository';
 
 class CountProductsService {
   async execute() {
