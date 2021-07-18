@@ -6,6 +6,12 @@ class FindProductByLowestStockService {
   async execute() {
     const productsRepository = getCustomRepository(ProductsRepository);
 
+    const productsExist = await productsRepository.find();
+    
+    if(!productsExist[0]) {
+      throw new Error("Não existem produtos cadastrados no momento");
+    }
+
     const rawProduct = await productsRepository.query(
       `
       SELECT 
@@ -18,6 +24,7 @@ class FindProductByLowestStockService {
       );
       `
     )
+
 
     const product: Product = rawProduct[0];
 

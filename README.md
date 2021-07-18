@@ -27,5 +27,20 @@
   - DeletarProduto
     * Tipo: Mutation
     * Permissão: Somente usuários logados e autenticados
-    
-    
+    *Falha: Caso **id** do produto não exista no banco de dados;
+  - ObterQuantidadeProdutos
+    * Tipo: Query
+    * Permissões: Todos os usuários
+    * Falha: Nenhuma
+  - ObterProdutoComMenorEstoque
+    * Tipo: Query
+    * Permissões: Todos os usuários
+    * Falha: Se não houver nenhum produto cadastrado
+  - ObterProdutoComMaiorEstoque
+    * Tipo: Query
+    * Permissões: Todos os usuários
+    * Falha: Se não houver nenhum produto cadastrado
+  - ObterProdutosSemEstoque
+    * Tipo: Query
+    * Permissões: Todos os usuários
+    * Falha: Se não houver nenhum produto cadastrado

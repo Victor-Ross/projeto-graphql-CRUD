@@ -1,7 +1,7 @@
 module.exports = {
   "type": process.env.TYPE,
   "host": process.env.HOST,
-  "port": 3306,
+  "port": process.env.PORT,
   "username": process.env.USER,
   "password": process.env.PASSWORD,
   "database": process.env.DATABASE,
