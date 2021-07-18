@@ -1,7 +1,7 @@
 # Web API criada com graphQL, type-graphQL, typeorm, mysql, JWT, bcrypt e typescript
 
 ## Modo de uso
-  - Necessário inserir dados no arquivo ormconfig.js, "username, password, host, port e database" para configuração do db
+  - Necessário inserir dados no arquivo ormconfig.js, "type, username, password, host, port e database" para configuração do db
   - Necessário inserir dados no arquivo auth.ts, "secret, expiresIn" dentro de src/config, arquivo usado para JWT
   - **yarn typeorm migration:run** (criação das tabelas products e users no banco de dados usando migrations).
 
