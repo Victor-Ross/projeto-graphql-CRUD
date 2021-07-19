@@ -35,7 +35,7 @@
   - DeletarProduto
     * Tipo: Mutation
     * Permissão: Somente usuários logados e autenticados
-    *Falha: Caso **id** do produto não exista no banco de dados;
+    * Falha: Caso **id** do produto não exista no banco de dados;
   - ObterQuantidadeProdutos
     * Tipo: Query
     * Permissões: Todos os usuários
