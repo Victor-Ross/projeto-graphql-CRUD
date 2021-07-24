@@ -71,4 +71,3 @@
     * Permissões: Todos os usuários cadastrados no banco de dados
     * Falha: email/senha inválidos
 
-  Considerções finais: Agradeço pela disponibilidade da Tasken de analisar meu primeiro projeto usando graphQL, espero agradar e melhorar cada vez mais!
